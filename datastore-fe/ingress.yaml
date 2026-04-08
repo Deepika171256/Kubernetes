@@ -5,11 +5,11 @@ metadata:
   labels:
     name: datastore-ing
   namespace: frontend
+  annotations:
+    kubernetes.io/ingress.class: "kong"   # Kong controller target
 spec:
-  ingressClassName: nginx
   rules:
-    - host: app.mahadevshiva.shop
-      http:
+    - http:
         paths:
           - path: /
             pathType: Prefix
